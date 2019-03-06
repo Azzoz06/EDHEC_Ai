@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title>Visual Recognition Pizza Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css" />
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+</head>
+<body>
+    <H3>Visual Recognition Workshop</H3>
+    <H4>Pizza Checker</H4>
+    <input id="picture" type="file" accept="image/*;capture=camera">
+    <p>
+    <div id="view_pic"></div>
+    <div id="results"></div>
+    
+    <script>
+        var formData = new FormData();
+        var myInput = document.getElementById('picture');
+        
+        function sendPic() {
+            var request = new XMLHttpRequest();    
+            
+            //Displaying Picture
+            var file = myInput.files[0];
+            var reader = new FileReader();
+            reader.onload = function (e) { 
+                console.log(e); 
+                document.getElementById("view_pic").innerHTML = "<img src='"+e.target.result+"' style='max-width:300;max-height:300'>";
+            }
+            reader.readAsDataURL(file);
+            formData.set("photo", file);
+            
+            // Showing Upload progress
+            request.upload.addEventListener("progress", function(evt){
+                if (evt.lengthComputable) {
+                    console.log("add upload event-listener" + evt.loaded + "/" + evt.total);
+                    document.getElementById("results").innerHTML = "Uploading to IBM Cloud <BR> <progress value='"+evt.loaded+"' max='"+evt.total+"'>";
+                }
+            }, false);
+            
+            // Showing analysis progress
+            request.upload.addEventListener("load", function(evt){
+                    document.getElementById("results").innerHTML = "Watson is analyzing the picture...";
+            }, false);
+            
+            
+
+            // Display results
+            request.onreadystatechange = function() {
+                console.log(this);
+                if (this.readyState == 4 && this.status == 200) {                    
+                    document.getElementById("results").innerHTML = this.response;
+                }
+            };
+            
+            // Sending picture to IBM Cloud
+            request.open("POST", "/submit");
+            request.send(formData);
+        }
+        
+        // Listener on picture selection
+        myInput.addEventListener('change', sendPic, false);
+    </script>
+</body>
+</HTML>

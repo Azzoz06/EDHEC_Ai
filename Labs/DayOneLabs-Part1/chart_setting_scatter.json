@@ -1,0 +1,15 @@
+{
+    "type": "scatter",
+    "title": " ",
+    "subtitle": "",
+    "x": "mpg",
+    "y": "horsepower",
+    "colorMap": "",
+    "sizeMap": "",
+    "shapeMap": "",
+    "fitline": "logarithmic",
+    "zoomSlider": true,
+    "mouseTracker": false,
+    "gridLines": true,
+    "showToolbox": true
+}

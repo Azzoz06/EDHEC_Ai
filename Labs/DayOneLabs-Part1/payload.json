@@ -1,0 +1,1 @@
+{"fields":["ID","Gender","Status","Children","Est_Income","Car_Owner","Age","LongDistance","International","Local","Dropped","Paymethod","LocalBilltype","LongDistanceBilltype","RatePlan","Usage"],"values":[[1234,"M","S",1,123000,"Y",33,95,102,234,3,"CC","Budget","Intnl_Discount",2,431]]}

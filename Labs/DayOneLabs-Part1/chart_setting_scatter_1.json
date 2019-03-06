@@ -1,0 +1,17 @@
+{
+    "type": "scatter",
+    "title": " ",
+    "subtitle": "",
+    "footnote": "",
+    "x": "mpg",
+    "y": "acceleration",
+    "colorMap": "origin",
+    "sizeMap": "",
+    "shapeMap": "",
+    "fitline": "",
+    "zoomSlider": true,
+    "mouseTracker": false,
+    "gridLines": true,
+    "showToolbox": true,
+    "showARIA": true
+}

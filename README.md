@@ -28,6 +28,10 @@ More specifically, participants should be able to (skill- and competency-based o
 ## Environment setup
 
 ---
+## Resources  
+There are a lot of resources available to go deeper into AI and related technologies. Some are listed in the [Resources.md](Resources.md)
+
+---
 ## Evaluation Process
 Your personal grade will be a combination of:
 1. **Individual Work** which is the grade you'll get for the Quiz on Day 4 (April 19th) and
@@ -50,13 +54,25 @@ The group work is a Hackathon-style work throughout the entire duration of the w
   + Industry Use Cases
 + IBM Watson AI Platform (Services & Tools) & IBM Watson Machine Learning
 
-+ **Hands-on Labs** – Machine Learning 101  « The Clickers way » [here](Labs/DayOneLabs/Lab1-GettingStarted.md) - *This Lab is going to walk you thru the setting of your environment, instantiation of the Watson Studio service and basic data exploration, data visualization and data refinery tasks.* ***You don't need to complete the entire data refinery part***
-+ **Hands-on Labs** – Machine Learning 101  « The Clickers way » [here](Labs/DayOneLabs/Lab2-WatsonML_Model_Builder.md) *This lab is going to walk you through the creation of your first **Machine Learning model.** *It will predict the likelihood of a customer to churn for a Telco company*  
-+ **Hands on Labs** – Machine Learning «  The Coders way »
++ **Hands-on Labs** – Machine Learning 101  « The Clickers way » [here](Labs/DayOneLabs-Part1/Lab1-GettingStarted-Small.md) - *This Lab is going to walk you thru the setting of your environment, instantiation of the IBM Watson Studio service and basic data exploration, data visualization and data refinery tasks.* ***You don't need to complete the entire data refinery part***
++ IBM Watson Machine Learning
++ **(Optional) Hands-on Labs** – Machine Learning 101  « The Clickers way » [here](Labs/DayOneLabs-Part1/Lab2-WatsonML_Model_Builder.md) *This lab is going to walk you through the creation of your first **Machine Learning model.** *It will predict the likelihood of a customer to churn for a Telco company*  
 + Computer Vision
-+ **Hands on Labs** – Visual Recognition using the IBM Watson Visual Recognition service. This is the *clickers* approach available [here](Labs/DayTwoLabs/Lab1%20-%20Using%20Visual%20Recognition%20with%20UI/README.md)  
++ **Hands on Labs** – Visual Recognition using the IBM Watson Visual Recognition service. This is the *clickers* approach available:
+  + Getting Started with Visual Recognition [Labs/DayOneLabs-Part2/Lab1-UsingVisualRecognitionWithUI/README.md](Labs/DayOneLabs-Part2/Lab1-UsingVisualRecognitionWithUI/README.md)  
+  + Create your custom classifier [Labs/DayOneLabs-Part2/Lab2-CreateCustomClassifierWithUI/README.md](Labs/DayOneLabs-Part2/Lab2-CreateCustomClassifierWithUI/README.md)   
 
-### Day Two (half day)
+  > Note: the following labs are optional but they might be useful for your Hackathon depending on what you to implement. You have plenty of time to work on those and get inspired before the submission date of your project.    
+
+  + Use Visual Recognition APIs [Labs/DayOneLabs-Part2/Lab3-UsingVisualRecognitionAPIsWithCommandLine/README.md](Labs/DayOneLabs-Part2/Lab3-UsingVisualRecognitionAPIsWithCommandLine/README.md)
+  + Create and Retrain custom classifier with APIs [Labs/DayOneLabs-Part2/Lab4-CreateAndRetrainCustomClassifierWithAPIs/README.md](Labs/DayOneLabs-Part2/Lab4-CreateAndRetrainCustomClassifierWithAPIs/README.md)
++ Node Red
+  + [Labs/DayOneLabs-Part2/Lab5-IntegrateVisualRecognitionInYourApplicationWithNode-Red/README.md](Labs/DayOneLabs-Part2/Lab5-IntegrateVisualRecognitionInYourApplicationWithNode-Red/README.md)
+
+
+
+---
+### Day Two
 
 + Deep Learning fundamentals
 + **Hands on Labs** - Deep Learning for image recognition. This lab is going to walk you through the process of building Neural Networks to recognize hand written digits in different ways:
