@@ -1,0 +1,7 @@
+{"fields":["ID","Gender","Status","Children","Est_Income","Car_Owner","Age","LongDistance","International","Local","Dropped","Paymethod","LocalBilltype","LongDistanceBilltype","RatePlan","Usage"],
+  "values":[
+    [1234,"M","S",1,123000,"Y",33,95,102,234,3,"CC","Budget","Intnl_Discount",2,431],
+    [2345,"M","M",3,63000,"Y",0,0,12,102,0,"CH","Budget","Standard",1,114],
+    [3456,"F","S",0,51500,"N",33,50,0,167,0,"CC","Budget","Standard",3,230],
+    [4567,"F","M",2,178000,"Y",207,50,21,300,1,"CC","FreeLocal","Standard",1,578]
+    ]}

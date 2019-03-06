@@ -1,0 +1,8 @@
+ID,Gender,Status,Children,Est_Income,Car_Owner,Age,LongDistance,International,Local,Dropped,Paymethod,LocalBilltype,LongDistanceBilltype,Usage,RatePlan
+2048,"F","S",1,13576.500000,"N",39.426667,14.830000,0,25.660000,0,"CC","Budget","Standard",40.490000,1
+2054,"F","M",2,84166.100000,"N",54.013333,3.280000,0,11.740000,1,"CC","Budget","Standard",15.020000,2
+2075,"F","S",0,68427.400000,"N",42.393333,23.760000,0,50.050000,0,"Auto","FreeLocal","Standard",73.810000,3
+2095,"F","M",2,77551.100000,"Y",33.600000,20.530000,0,41.890000,1,"CC","Budget","Intnl_discount",62.420000,2
+2108,"F","S",1,13109.100000,"N",62.606667,22.380000,0,40.480000,0,"Auto","Budget","Standard",62.870000,1
+2124,"M","M",2,1765.410000,"N",18.766667,3.040000,0,44.950000,0,"CC","FreeLocal","Standard",47.990000,4
+2154,"M","S",0,65000,"Y",45.653333,11.630000,9.700000,115.660000,1,"Auto","FreeLocal","Intnl_discount",137,4
