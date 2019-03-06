@@ -1,4 +1,7 @@
+![](assets/markdown-img-paste-20190306155351319.png)  
+
 # Business Applications of Artificial Intelligence
+
 
 In this course students will get the foundational understanding of where we are today with **Artificial Intelligence (AI)** both from a technology standpoint and from a business standpoint. AI being defined as a collection of technics inspired by the goal of understanding and implementing intelligent behaviors.
 Key AI technologies will be covered like machine learning, deep learning and computer vision, natural language processing and a strong focus will be on the business implications of AI.
