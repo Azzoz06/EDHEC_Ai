@@ -1,0 +1,307 @@
+I am hungry,eat
+I am starving,eat
+I would like to eat something,eat
+I am looking for a restaurant,eat
+I want pasta,eat
+I am really hungry you know a good place to eat around here,eat
+Hello I'm starving I'm looking for a place to eat,eat
+I want some food,eat
+I don't want to go further,exit
+stop the order,exit
+get me out of here,exit
+cancel,exit
+exit,exit
+get me out,exit
+I don't think these nodes are very good - or at least they're not documented well.,feedback
+The watson starter kit is awesome!,feedback
+I love the way that the new breaking news service works!,feedback
+I'm having trouble following the instructions that are given,feedback
+it's really horrendous how badly these nodes are documented - There is absolutely no way any body can follow that! Infuriating!,feedback
+These new nodes are awesome! I love the way they are used in the new flows!,feedback
+I like the way the documentation is written,feedback
+I'm finding it very difficult to make any of this work,feedback
+What are your hours of the restaurant?,hotel_hours
+What time does the restaurant close?,hotel_hours
+What are the pool and Fitness Center hours ?,hotel_hours
+What time can I grab dinner?,hotel_hours
+What are the hotel Restaurant hours of operation?,hotel_hours
+What's the lunch time?,hotel_hours
+What time does the lounge/restaurant open,hotel_hours
+What are the hours of your restaurant?,hotel_hours
+When are you serving dinner?,hotel_hours
+hours fo pool,hotel_hours
+What time does the food place open?,hotel_hours
+What are the hours of the gym?,hotel_hours
+When is the pool open?,hotel_hours
+When does the gym close?,hotel_hours
+what's open right now,hotel_hours
+When is the gym open?,hotel_hours
+Is the pool heated?,hotel_info
+Do you have an elliptical?,hotel_info
+Is there a lifeguard?,hotel_info
+Can I order food at the pool?,hotel_info
+Do you have weights?,hotel_info
+How deep is the pool?,hotel_info
+What is the length of the Pool?,hotel_info
+Do you have a bike?,hotel_info
+Do you have an outdoor/ indoor pool?,hotel_info
+Can I bring food to the pool?,hotel_info
+What size is the pool?,hotel_info
+Do you have water in your gym?,hotel_info
+I want to work out.,hotel_locations
+can I get hot tea at breakfast?,hotel_locations
+Where is the swimming pool?,hotel_locations
+Where do you serve lunch?,hotel_locations
+Where can I go swimming?,hotel_locations
+I'm hungry. Where can I eat?,hotel_locations
+Is the pool outside?,hotel_locations
+Where is the restaurant?,hotel_locations
+Where is the hotel cafe?,hotel_locations
+Whereabouts is the gym?,hotel_locations
+Which floor is the gym/pool on?,hotel_locations
+I want to go swimming.,hotel_locations
+Where is hotel restaurant?,hotel_locations
+Where is the gym/fitness center,hotel_locations
+Hi!  What's the quickest way to get from point A to point B.,hotel_locations
+Where is the pool,hotel_locations
+Is there a local full service gym?,hotel_locations
+Where is the restaurant,hotel_locations
+Do you have a sauna?,hotel_locations
+When can I go for a swim,hotel_locations
+Do you have an outdoor pool?,hotel_locations
+Where is the gym?,hotel_locations
+How do I get in the gym?,hotel_locations
+any good time to go swimming,hotel_locations
+How do I arrange a shuttle or a taxi to the airport?,hotel_procedure
+How can I book a taxi?,hotel_procedure
+how do I turn the ac off in my room,hotel_procedure
+How can I book a cab?,hotel_procedure
+How do I book a large reservation in the restaurant?,hotel_procedure
+How can I arrange transportation?,hotel_procedure
+Hey can I get some new towels up to my room,hotel_procedure
+How do I arrange a shuttle or taxi to the airport?,hotel_procedure
+How do I adjust the heat/AC in the guestroom?,hotel_procedure
+How do I set the clock alarm in the guestroom?,hotel_procedure
+What restaurants are in the mall?,local_recommend
+Can you recommend some great upscale restaurants outside of the hotel?,local_recommend
+What local restaurants have happy hour?,local_recommend
+Can you recommend a restaurant that is not a chain for Italian cuisine?,local_recommend
+I would like to have dinner at a nice restaurant.  Can you give me some ideas?,local_recommend
+"can you recommend a restaurant nearby?  i'm looking for ""x"" cuisine and ""x"" cost.",local_recommend
+Could you give me a recommendation for a good restaurant with Mexican food?,local_recommend
+Which restaurants deliver to the hotel?,local_recommend
+Recommend me good restaurants close by?,local_recommend
+Is there any kind of to go food I can get?,local_recommend
+We're looking for a good Chinese restaurant nearby. Any suggestions?,local_recommend
+Hi! Where's a hole in the wall restaurant that's not on your list and you would take your family to.,local_recommend
+Can you recommend a Japanese restaurant?,local_recommend
+Good sitdown reaturants in the area.,local_recommend
+Is there a place to buy a toothbrush near here?,local_recommend
+Where can I buy toiletries,local_recommend
+Is there a convenience store near here?,local_recommend
+Can you recommend a good Italian restaurant?,local_recommend
+Can you make a dinner recommendation - we are thinking Italian.,local_recommend
+What pizza restaurants deliver to the hotel?,local_recommend
+Is there a restaurant close by that you would recommend?,local_recommend
+Hey I was looking for someplace interesting to go eat; do you know anyplace nearby,local_recommend
+What Chinese restaurants deliver to the hotel?,local_recommend
+Can you recommend a good restaurant for dinner?,local_recommend
+Can you recomend a restaurant?,local_recommend
+Is there any where I can get food to go around here?,local_recommend
+What local restaurants have live music?,local_recommend
+Where can I get sushi?,local_recommend
+I want to eat at an Italian restaurant.  What are the best ones around?,local_recommend
+Can I walk to that restaurant or do I need to take a cab?,local_recommend
+What fast food places are closed by the hotel?,local_recommend
+What are the best restaurants to visit that would provide me a taste of the town?,local_recommend
+What local restaurants have Jazz music?,local_recommend
+What local restaurants have outdoor seating?,local_recommend
+Is there a place close that I can walk to for dinner?,local_recommend
+Can you recommend a restaurant for dinner? Perhaps chinese food or italian. Within walking distance of the hotel.,local_recommend
+I 'd like pepperoni pizza,order_pizza
+Can I order a pizza without pineapple,order_pizza
+I'd like a large hawaiian with extra pineeapple,order_pizza
+I'd like a small margherita but please no anchovies,order_pizza
+I don't want red peppers or onions on my vegetarian pizza,order_pizza
+I love anchovies so please send me a pizza full of them,order_pizza
+medium pizza please and I don't want any red peppers,order_pizza
+Can I order a pizza with more cheese,order_pizza
+I want to order a pizza,order_pizza
+I want to order a large pizza,order_pizza
+Can you deliver a vegetarian pizza,order_pizza
+Can I get a pizza margarita; small please,order_pizza
+a large vegetarian without onions,order_pizza
+Can I get a hawaiian pizza with no pineapple,order_pizza
+Can I get a pizza with extra red peppers but no green peppers,order_pizza
+can I have a carnivore pizza but no chicken,order_pizza
+"can I have a pizza with onions, beef, chicken and extra cheese",order_pizza
+what did ya say,repeat_request
+plese repeat,repeat_request
+I didn't hear you,repeat_request
+I couldn't hear you,repeat_request
+I didn't hear that,repeat_request
+say again,repeat_request
+come again,repeat_request
+repeat that,repeat_request
+say that again,repeat_request
+what did you say,repeat_request
+I couldn't hear that,repeat_request
+say what,repeat_request
+can you repeat that please,repeat_request
+say that again please,repeat_request
+what was that,repeat_request
+reset,reset
+reset operation,reset
+cancel the order,reset
+stop ordering,reset
+delete the inputs,reset
+I need to reset my name,update_profile
+Can you change my ID?,update_profile
+update the identity,update_profile
+I would like to refresh my profile,update_profile
+Can I set a new nickname?,update_profile
+I want to update my profile,update_profile
+how hot,weather
+when the rain of end,weather
+is it dark outside,weather
+When will it be sunny,weather
+when will be the rain end ?,weather
+when were you there when rain is starch,weather
+when the rain stops?,weather
+when the rail will end,weather
+when rain ends,weather
+when rain,weather
+when all the rain and,weather
+What weather do you like?,weather
+what weather?,weather
+What us weather in 08854,weather
+what time will the weather change,weather
+what's the weather out would be to destination,weather
+whats the weather outside,weather
+whats the weather like right now,weather
+what's the weather,weather
+Whats the temperature outside?,weather
+What's the temperature outside?,weather
+whats the outside air temperature?,weather
+what is the weather like,weather
+What is the weather going to be like,weather
+what is the tempreture outside,weather
+What is the temperature outside?,weather
+What is the temperature outside,weather
+what is the rain?,weather
+what is the outside temperature?,weather
+what abt weather today?,weather
+what about weather today?,weather
+What about weather?,weather
+What about weather,weather
+weather is cool.,weather
+watson when this rain will over,weather
+the weather is important to me,weather
+The sun is out,weather
+tell me the weather,weather
+is it sunny out?,weather
+is raining,weather
+Is raining?,weather
+is raining today,weather
+it is a sunny day,weather
+it is cloudy now,weather
+How about this rain,weather
+how cold,weather
+how cold is it out,weather
+how cold is it outside,weather
+"it's sunny, maybe we don't need the lights",weather
+it's sunny now,weather
+I want to know the weather,weather
+I want to see weather forecasts,weather
+i want to  weather news.,weather
+look up the weather,weather
+look up the weather in tel aviv,weather
+make it stop raining,weather
+"Oh, it's a sunny day",weather
+"oh, it started to rain",weather
+oops... it's raining again,weather
+raining now,weather
+rain rain go away,weather
+When will the rain stop,weather
+when will the sun appear?,weather
+when will the sun begin?,weather
+when will the sun come out,weather
+when will the sun set?,weather
+when will this rain end,weather
+when will this rain end?,weather
+when wil the rain end?,weather
+Whn will this rain stop?,weather
+why is it raining ?,weather
+Why is it raining,weather
+Why is it raining?,weather
+Why is it raining again,weather
+Why is it raining today?,weather
+why it is raining,weather
+Why it is raining?,weather
+will it be warm today?,weather
+will it rain much longer?,weather
+will rain end?,weather
+Will rain stop?,weather
+wow .. it is raining in front of my car,weather
+is raining now,weather
+Can we go someplace where it's not raining?,weather
+can you tell me what's the weather will be in one hour if we keep goint in this direction?,weather
+Can you tell me what the weather looks like?,weather
+Check the weater,weather
+check the weather,weather
+check the wether,weather
+check the wheather,weather
+check weather,weather
+Does It raining all day?,weather
+Does the weather get worse,weather
+do I need a jacket,weather
+do you know weather today,weather
+do you think will rain?,weather
+"Good weather, ya?",weather
+Harvard is it going to rain,weather
+hey watson it's not raining,weather
+"Hi, please tell me something about weather",weather
+"hi, what is the temperature in milan",weather
+what would be the weather 50 km ahead?,weather
+how hot is it outside,weather
+How is the climate?,weather
+How is the typooon,weather
+how is the weater?,weather
+how long the rain?,weather
+how long till it rains,weather
+How long until the rain ends?,weather
+how long will it rain,weather
+how many degrees are outside?,weather
+how's the wether,weather
+how`s the wheather,weather
+how warm is it,weather
+is it a clear day ?,weather
+is it a nice day today?,weather
+is it a sunny day,weather
+When will it be sunny?,weather
+is it going to rain,weather
+Is it going to rain?,weather
+Is it going to rain all day?,weather
+is it going to rain for the entire day?,weather
+is it going to rain later today,weather
+is it going to rain today?,weather
+is it going to rain when we arrive?,weather
+is it gonna be raining,weather
+is it raining,weather
+Is it rainning now?,weather
+is it rainning right?,weather
+when will the rain arrive,weather
+It is going to rain,weather
+it isn't raining anymore,weather
+"it is raining, what can you do ?",weather
+It's a rainy day,weather
+It's become sunny now,weather
+It's cold here,weather
+it's cold today,weather
+it's getting cold,weather
+it's hot,weather
+its is raining,weather
+it's raining ...,weather
+its raining now ?,weather
+Its Raining now,weather
+It's rain today.,weather

@@ -1,0 +1,58 @@
+guestroom,alarm_clock,alarm clock,radio clock,radio,clock,alarm
+guestroom,towels,linen,linens,wash cloth,towel
+guestroom,heat_ac,air conditioning,heat,temperature,room temperature,heater,cooler,ac
+hotel_amenity,gym,weights,lift weights,fitness center,elliptical,bike
+hotel_amenity,wellness center,sauna,wellness
+hotel_amenity,hotel restaurant,restaurant,your restaurant,lounge,hotel restaurant,hotel lounge,food place
+hotel_amenity,pool,swimming pool,swimming,lifeguard
+mealtime,breakfast
+mealtime,lunch
+mealtime,dinner,supper
+pizza_confirmed,yes,sure,I confirm,confirmed,agreed
+pizza_confirmed,reject,reject,no
+pizza_notoppings,onions
+pizza_notoppings,pineapple
+pizza_notoppings,chicken
+pizza_notoppings,salamy
+pizza_notoppings,ham
+pizza_notoppings,chilli
+pizza_notoppings,cheese
+pizza_notoppings,anchovies
+pizza_notoppings,olives
+pizza_notoppings,beef
+pizza_notoppings,green peppers
+pizza_notoppings,red peppers
+pizza_size,small
+pizza_size,large
+pizza_size,medium,regular
+pizza_toppings,salamy
+pizza_toppings,chilli
+pizza_toppings,ham
+pizza_toppings,beef
+pizza_toppings,green peppers
+pizza_toppings,pineeapple
+pizza_toppings,onions
+pizza_toppings,olives
+pizza_toppings,anchovies
+pizza_toppings,cheese
+pizza_toppings,red peppers
+pizza_toppings,pineapple
+pizza_toppings,chicken
+pizza_type,quatro formaggi
+pizza_type,vegetarian,vegetariana
+pizza_type,mexicana,mexican
+pizza_type,margherita
+pizza_type,pepperoni
+places,sitdown,eat-in,eat in,sit down
+places,food_to_go,food to go,to go food,carry out,take away
+places,restaurant,local restaurant
+restaurant,italian_restaurant,italian,pasta,italian restaurant,italian place,italian food,italian cuisine
+restaurant,coffee_shop,starbucks,dunking,dunkin,coffee shop,coffee place
+restaurant,steak_house,mexican,texan,tex-mex,meat,beef,steak house
+restaurant,fast_food,junk food,hamburger,fast food
+restaurant,chinese_restaurant,chinese,chinese food,noodles,spring roll,chinese restaurant
+restaurant,pizza_restaurant,pizzeria,pizza pie,pizza,pizza restaurant
+restaurant,french_restaurant,french,french food,macaron,frog legs,brasserie,french restaurant
+restaurant,japanese_restaurant,japanese,sushi,japanese restaurant,japanese food
+transportation,shuttle
+transportation,taxi,uber,cab
