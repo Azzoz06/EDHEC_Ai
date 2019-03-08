@@ -39,9 +39,10 @@ Your personal grade will be a combination of:
   + Think about,
   + Describe,
   + Mockup,
-  + Present and AI use case
+  + Present an AI use case
 
 The group work is a Hackathon-style work throughout the entire duration of the workshop (more or less 1.5 month). Presentation of projects will take place on **April 19th**.
+More information about the expected work: [here](GroupWork.md)
 
 ---
 ## Agenda
