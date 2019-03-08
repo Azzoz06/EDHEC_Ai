@@ -1,5 +1,12 @@
 # Resources
 
+## Tutorials
++ IBM 10 minutes of Tech series: https://www.youtube.com/channel/UCpUdTlfr5m16HOz7YaNqfZg
+
+## Conversation and Chatbots
++ Integration Conversation into a Website tutorial: [Youtube Video](https://www.youtube.com/watch?v=O3silvVBaC8)
++ Integrating Watson Assistant with Watson Natural Language Understanding: https://developer.ibm.com/tutorials/cc-watson-chatbot-conversation-nlu/
+
 ## Data Science Cheat Sheets
 In order to assist you during the Labs, make sure you leverage the following **Cheat Sheets** (source [https://www.datacamp.com/community/data-science-cheatsheets](https://www.datacamp.com/community/data-science-cheatsheets))
 
@@ -14,12 +21,12 @@ In order to assist you during the Labs, make sure you leverage the following **C
 + Visualization using Bokeh: [Bokeh_CS.pdf](Resources/Bokeh_CS.pdf)
 
 ---
-### Books
+## Books
 + Machine Learning for dummies: ![](assets/markdown-img-paste-20190225131840821.png)
   + Download it [here](Resources/ibm-machine-learning-for-dummies-ibm-limited-edition_IMM14209USEN.pdf)  
 
 + Mastering Machine Learning with scikit-learn. ![](assets/markdown-img-paste-20190225132330643.png)
-  + + Download it [here](Resources/mastering-machine-learning-with-scikit-learn.pdf)  
+  + Download it [here](Resources/mastering-machine-learning-with-scikit-learn.pdf)  
 
 ### Kaggle
 **Kaggle** is an online community of data scientists and machine learners, owned by Google LLC. Kaggle allows users to find and publish data sets, explore and build models in a web-based data-science environment, work with other data scientists and machine learning engineers, and enter competitions to solve data science challenges.  
