@@ -2,51 +2,67 @@
 ![alt text](images/Handwritten.png "IBM Watson Studio CNN for dummies")
 ## Handwritten digit recognition with MNIST on iOS build using IBM Watson Studio & Watson Machine Learning capabilities - Part 1 : for dummies.
 
-This tutorial shows IBM Watson Studio framework capabilities to load training data to the IBM Cloud Object Storage (COS) area, create a convolutional neural network (CNN) model that is build and trained with IBM Watson Machine Learning kernel. I´ll show how the model can be exported & integrated in iOS and can be accessed in code (Objective-C in this Tutorial) via the new CoreML and Vision Api introduced by apple for iOS11. 
-I trained the model on the MNIST dataset in order to create an app that can recognize handwritten digits.
-The iphone application used in this tutorial is from [Eridy Lukau](https://github.com/boaerosuke) accessible at this [URL](https://github.com/boaerosuke/digitrecognition_ios) 
+This tutorial shows **IBM Watson Studio** framework capabilities:
++ to load training data to the IBM Cloud Object Storage (COS) area,
++ create a convolutional neural network (CNN) model that is built and trained with **IBM Watson Machine Learning** kernel.  
+
+Last section shows how the model can be exported & integrated in an iOS application and can be accessed in code (Objective-C in this Tutorial) via the new CoreML and Vision Api introduced by Apple for iOS11.
+The model is trained on the MNIST dataset in order to create an application that can recognize Handwritten digits.
+>The iPhone application used in this tutorial is from [Eridy Lukau](https://github.com/boaerosuke) accessible at this [URL](https://github.com/boaerosuke/digitrecognition_ios)
 
 ## Introduction
-Watson Studio provides you with the environment and tools to solve your business problems by collaboratively working with data. You can choose the tools you need to analyze and visualize data, to cleanse and shape data, to ingest streaming data, or to create, train, and deploy machine learning models.
+**IBM Watson Studio** provides you with the environment and tools to solve your business problems by collaboratively working with data. You can choose the tools you need to analyze and visualize data, to cleanse and shape data, to ingest streaming data, or to create, train, and deploy machine learning models.
 
-This illustration shows how the architecture of Watson Studio is centered around the project. A project is where you organize your resources and work with data.
+This illustration shows how the architecture of **IBM Watson Studio** is centered around the project. A project is where you organize your resources and work with data.
 ![alt text](images/Watson-Studio.png "IBM WS")
 
-IBM Watson Studio is a collaborative environment with end to end AI tools that you and your team can use to collect and prepare training data, and to design, train, and deploy machine learning models.
+**IBM Watson Studio** is a collaborative environment with end to end AI tools that you and your team can use to collect and prepare training data, and to design, train, and deploy machine learning models.
 
-Ranging from graphical tools you can use to build a model in minutes, to tools that automate running thousands of experiment training runs and hyperparameter optimization, Watson Studio AI tools support popular frameworks, including: TensorFlow, Caffe, PyTorch, and Keras.
-In this first part dedicated to non pure data scientists, we will use Watson Studio graphical tools to :
+Ranging from graphical tools you can use to build a model in minutes, to tools that automate running thousands of experiment training runs and hyperparameter optimization, Watson Studio AI tools support popular frameworks, including:
++ TensorFlow,
++ Caffe,
++ PyTorch,
++ SciKit-learn,
++ and Keras.  
+
+In this first part dedicated to non-pure data scientists (clickers), we will use **IBM Watson Studio** graphical tools to :
 
 1. Load & store the training data
 0. Model the Artificial Neural Network
-0. Run it against the trainign data
+0. Run it against the training data
 0. Score the created model using test/validation data
 0. Deploy the model
-0. Export it as a CoreML Apple iOS model
-0. Embed it into an iphone application
+0. Export it as an Apple CoreML iOS model
+0. Embed it into an iPhone application
 
 ![alt text](images/MainArchi.png "IBM homepage")
 
-Finally use the application to test your own "finger written" numbers ! 
+Finally use the application to test your own "finger written" numbers !
 
-## 1-Load, Store, Organize your data
-First, to access Watson Studio environment, you need your IBM ID. 
+## 1 - Load, Store, Organize your data
+First, to access Watson Studio environment, you need your IBM ID.
 Visit [IBM Dataplatform](http://dataplatform.ibm.com) and create your free account. Most of the cloud and cognitive services are for free, so you can learn, develop your models and deploy them for productive use.
 ![alt text](images/Watson-Homepage.png "IBM homepage")
 
-For this tutirial I used the [MNIST](https://en.wikipedia.org/wiki/MNIST_database) computer vision data set to train our deep learning model to recognize handwritten digits.
+For this tutorial I used the [MNIST](https://en.wikipedia.org/wiki/MNIST_database) computer vision data set to train our deep learning model to recognize handwritten digits.
 The Data set from MNIST can be found [here] (https://github.com/LZRVC/mnist-with-keras-and-watson-studio)
 Select the file called `mnist-tf-dataset.zip`, download it. (see below the content of that file)
 ![alt text](images/MNIST1.png "COS")
 
-In order to load your training data you must create a Cloud Object Storage instance, to do so process as follow :
-Click on the Services item and choose Data services:
+In order to load your training data you must create a Cloud Object Storage instance.
+>Note: if you have previously used IBM Watson Studio, it is most likely that you already have a Cloud Object Storage for your account so there is no to recreate another one.
+
+To create a Cloud Object Storage, process as follow:
++ Click on the Services menu and choose **Data services**:
 ![alt text](images/COS.png "COS")
 
-From there add/create a new Cloud Object Storage instance
++ From there **add/create** a new Cloud Object Storage instance
 ![alt text](images/COS1.png "COS2")
 
-The next step is to create buckets in your Cloud Object Storage (COS) and upload your data. Recommendation is to create two buckets (you can also call them containers for your data objects), one for the training data itself and one for the models and results. 
+To access your existing Cloud Object Storage, process as follow:
+>Note that on IBM Lite Account you can only have one Cloud Object Storage per account which is limited to 25Gb in size.  
+
+The next step is to create buckets in your Cloud Object Storage (COS) and upload your data. Recommendation is to create two buckets (you can also call them containers for your data objects), one for the *training data* itself and one for the models and results.
 For larger models, more granularity is needed, since the Watson Machine Learning (WML) will load the data from the training data bucket, so you want to avoid unnecessary waiting time and memory consumption for the data which is not used in your training runs.
 ![alt text](images/COS3.png "COS")
 
@@ -56,7 +72,7 @@ the model & results bucket will be used by WML to store models & log results.
 
 ## 2-Model the Artificial Neural Network
 
- * Using the graphical flow editor in Watson Studio (see below) you can create a new model 
+ * Using the graphical flow editor in Watson Studio (see below) you can create a new model
 ![alt text](images/ModelFlow.png "COS")
 
  * Create one with the appropriate options as shown hereafter :
@@ -90,7 +106,7 @@ and choose the appropriate model in our case select Single Convolution layer on 
 as shown below
 ![alt text](images/ModelSample.png "COS")
 
-Therefore proceed as earlier by editing the image data properties to point to your data set for the training and 
+Therefore proceed as earlier by editing the image data properties to point to your data set for the training and
 ![alt text](images/SINGLE-CNN.png "COS")
 
 ## 3-Run it against the trainign data
@@ -177,42 +193,42 @@ From there select the implementation tab and download the CoreML model
 In this tutorial I assume that you have a Mac Laptop and you already have installed the Appple applciation developement tools such as [Xcode](https://developer.apple.com/xcode/) required in this section to build & test the application.
 Please make sure you also registered you AppleID as developer as it will be required to build the mobile applicaiton.
 
-Now that we have a trained model compatible with Apple's CoreML framework let's play with it customzing the iphone applicaton develped by [Eridy Lukau](https://github.com/boaerosuke) accessible at this [URL](https://github.com/boaerosuke/digitrecognition_ios) 
+Now that we have a trained model compatible with Apple's CoreML framework let's play with it customzing the iphone applicaton develped by [Eridy Lukau](https://github.com/boaerosuke) accessible at this [URL](https://github.com/boaerosuke/digitrecognition_ios)
 
 Create a folder for this digit recognizer app then download and expand in this directory the entire project components/files.
 
 Open the digitrecognizer project file (called DigitRecognizer.xcodeproj) using XCode and make the following changes :
 
 First you need to replace project's model file called keras_mnist_cnn.mlmodel in the project directory by the one generated at step 6.
-I am asking you to do this as when you add a .mlmodel file to your Xcode project, Xcode generates a class for the model with the same base name as the .mlmodel file. So to minimize code modifications I prefer you to use the same model name. 
+I am asking you to do this as when you add a .mlmodel file to your Xcode project, Xcode generates a class for the model with the same base name as the .mlmodel file. So to minimize code modifications I prefer you to use the same model name.
 
 The other modifcation to be made concern the application code itself regarding the ouptut of the model prediction invocation
 in the file called ViewController.m at the following line (embedded wthin JLC comment tag) as followed
 
-``` 
+```
 -(void)predictDigit{  
     //unscaled image
     //self.imageToDetect = [[CIImage alloc]initWithImage:self.drawingCanvas.image];
-    
+
     //scaled image to 28x28
     UIImage *scaledCanvasImage = [self imageWithImage:self.drawingCanvas.image scaledToSize:CGSizeMake(28, 28)];
     self.imageToDetect = [[CIImage alloc]initWithImage:scaledCanvasImage];
-    
+
     MLModel *ml_model = [[[keras_mnist_cnn alloc] init] model];
     VNCoreMLModel *vnc_core_ml_model = [VNCoreMLModel modelForMLModel: ml_model error:nil];
-    
+
     VNCoreMLRequest *request = [[VNCoreMLRequest alloc] initWithModel: vnc_core_ml_model completionHandler: (VNRequestCompletionHandler) ^(VNRequest *request, NSError *error){
         NSArray *results = [request.results copy];
-        
+
         //JLC
         VNCoreMLFeatureValueObservation *res = ((VNCoreMLFeatureValueObservation *)(results[0]));
-        
+
         NSNumber *prediction = [NSNumber numberWithFloat:0];
         NSNumber *compare= [NSNumber numberWithFloat:0];
         int atIndex = 0;
-        
+
         for(int i = 0; i<[res.featureValue multiArrayValue].count; i++){
-            
+
             compare = [[res.featureValue multiArrayValue] objectAtIndexedSubscript:i];
             if([compare floatValue] > [prediction floatValue]){
                 prediction = compare;
@@ -224,15 +240,15 @@ in the file called ViewController.m at the following line (embedded wthin JLC co
         NSNumber *Percent = @(Ratio* 100);
         self.resultLabel.text = [result stringByAppendingFormat: @"I see a : %i at %.2f percent", atIndex, [Percent doubleValue]];
         //JLC
-        
+
         //VNClassificationObservation *res = ((VNClassificationObservation *)(results[0]));
-        
+
         //self.resultLabel.text = [NSString stringWithFormat: @"Recognized Digit : %@", res.identifier];
     }];
 ```
 Now you're ready to build and test with the iphone simulator  (7 or Higher) and/or de^loy it on your favorite apple device.
 
-Here is how it looks like, you can see on the screenshot hereafter the app show the predicted score associated to the recognized digit: 
+Here is how it looks like, you can see on the screenshot hereafter the app show the predicted score associated to the recognized digit:
 ![alt text](images/App1.png "COS")     ![alt text](images/App2.png "COS")
 
 

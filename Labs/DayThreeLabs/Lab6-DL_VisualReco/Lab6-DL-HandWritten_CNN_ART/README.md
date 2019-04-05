@@ -3,56 +3,47 @@
 ## Handwritten digit recognition with MNIST using IBM Watson Studio Jupyter Notebook in Python & Watson Machine Learning capabilities & Toolbox (ART) - for Data Scientist.
 
 
-This tutorial shows IBM Watson Studio framework capabilities to create Jupyter notebook leveraging Keras ML framework to create a convolutional neural network (CNN) model that is build & trained & improved in term of robustness & accuracy with IBM Watson Machine Learning Toolbox ART & IBM Watson ML capabilities.
+This tutorial shows **IBM Watson Studio** framework capabilities to create Jupyter notebook leveraging Keras ML framework to create a convolutional neural network (CNN) model that is build & trained & improved in term of robustness & accuracy with **IBM Watson Machine Learning** Toolbox ART & IBM Watson ML capabilities.
 
 ## Introduction
-Watson Studio provides you with the environment and tools to solve your business problems by collaboratively working with data. You can choose the tools you need to analyze and visualize data, to cleanse and shape data, to ingest streaming data, or to create, train, and deploy machine learning models.
+**IBM Watson Studio** provides you with the environment and tools to solve your business problems by collaboratively working with data. You can choose the tools you need to analyze and visualize data, to cleanse and shape data, to ingest streaming data, or to create, train, and deploy machine learning models.
 
-This illustration shows how the architecture of Watson Studio is centered around the project. A project is where you organize your resources and work with data.
+This illustration shows how the architecture of **IBM Watson Studio** is centered around the project. A project is where you organize your resources and work with data.
 
 
 ![alt text](images/Watson-Studio.png "IBM WS")
 
 
 
-This tutorial will leverage IBM ART(Adversarial Robustness Toolbox) open source library
-availalbe [here](https://github.com/IBM/adversarial-robustness-toolbox)
+This tutorial will leverage **IBM ART(Adversarial Robustness Toolbox)** open source library available [here](https://github.com/IBM/adversarial-robustness-toolbox)
 
 This is a library dedicated to adversarial machine learning. Its purpose is to allow rapid crafting and analysis of attacks and defense methods for machine learning models. The Adversarial Robustness Toolbox provides an implementation for many state-of-the-art methods for attacking and defending classifiers.
 
 The ART toolbox is developed with the goal of helping developers better understand:
-
-	Measuring model robustness
-	Model hardening
-	Runtime detection
++ Measuring model robustness
++ Model hardening
++ Runtime detection
 
 
 ![alt text](images/ART.png "IBM ART")
 
 
-For more information you can read "Adversarial Robustness Toolbox v0.3.0" IBM research publication from Nicolae, Maria-Irina and Sinn, Mathieu and Tran, Minh~Ngoc and Rawat, Ambrish and Wistuba, Martin and Zantedeschi, Valentina and Baracaldo, Nathalie and Chen, Bryant and Ludwig, Heiko and Molloy, Ian and Edwards, Ben
-available [here](https://arxiv.org/pdf/1807.01069)
+For more information you can read *"Adversarial Robustness Toolbox v0.3.0"* IBM research publication from Nicolae, Maria-Irina and Sinn, Mathieu and Tran, Minh~Ngoc and Rawat, Ambrish and Wistuba, Martin and Zantedeschi, Valentina and Baracaldo, Nathalie and Chen, Bryant and Ludwig, Heiko and Molloy, Ian and Edwards, Ben available [here](https://arxiv.org/pdf/1807.01069)
 
 
 ##  Step 1 - Create your notebook
 
-Once logged in the Watson Studio platform within a project create a new Notebook Select a name for your notebook and python language
+Once logged in the **IBM Watson Studio** platform within a project create a new Notebook Select a name for your notebook and python language.
 For the runtime select the biggest one you can depending on the price (free or not)
-
-
-
 
 ![alt text](images/Notebook.png "IBM WS")
 
-You're now ready to start writing your Handwritten digit Keras CNN and test it.
-
+You're now ready to start writing your Handwritten Digit Recognition Keras CNN and test it.
 
 ![alt text](images/Notebook1.png "IBM WS")
 
-Start "copy/paste" the following code into the first cell then click the run button to view the output of the excecution of your code
-the goal of this snippet is to install the ART libs into our environment
-and import all required classes.
-Keras version will be 2.2.4 i nthis tutorial.
+1. **Start "copy/paste"** the following code into the first cell.
+2. **Click the run** button to view the output of the execution of your code. The goal of this snippet is to install the ART libs into our environment and import all required classes. Keras version will be 2.2.4 in this tutorial.
 
 ```
 !pip install adversarial-robustness-toolbox
@@ -89,8 +80,7 @@ You should get something like :
 ![alt text](images/Notebook2.png "IBM WS")
 
 
-Now copy/paste the following utility functions to manipulate images
-and run it
+3. Now **copy/paste** the following utility functions to manipulate images and **run it**
 
 
 ```
@@ -122,14 +112,9 @@ def CheckImagesAcc(imgTable, LabelTable, predicted, NbViews):
     return NbErrors
 ```
 
+##  Step 2 - Prepare & Cleanse dataset
 
-
-##  Step 2 Prepare & Cleanse dataset
-
-Load pre-shuffled MNIST data into train and test datasets
-and create our CNN model to be trained.
-
-again copy/paste the code below & run it
+1. Load pre-shuffled MNIST data into train and test datasets and create our CNN model to be trained. Again **copy/paste** the code below & **run it**.
 
 ```
 # Read MNIST dataset
@@ -155,53 +140,52 @@ model.compile(optimizer=Optimizer, loss='categorical_crossentropy', metrics=['ac
 model.summary()
 ```
 
-You should see therefore a summary of our ANN model as shown hereafter
-Note the total number of weights & bias to be determine during the training sequence and understand how complex can be to train very complex ANN with hundreds of layers (here we have only 3 !).
+You should see a summary of the ANN model as shown hereafter.
+>Note the total number of weights & bias to be determine during the training sequence and understand how complex it can be to train very complex ANN with hundreds of layers (here we have only 3 !).
 
 ![alt text](images/Model.png "IBM model")
 
-
-**Conv2D**
-It is a 2D convolutional layer that we use to process the 2D MNIST input images. The first argument passed to the Conv2D() layer function is the number of output channels – in this case we have 32 output channels.
-The next input is the kernel_size, which in this case we have chosen to be a 3×3 moving window, next, the activation function is a rectified linear unit and finally we have to supply the model with the size of the input to the layer (which is declared in another part of the code.
-Declaring the input shape is only required of the first layer.
+### Some explanations about the different layers and hyperparameters used in the model.
+>**Conv2D**
+It is a 2D convolutional layer that is used to process the 2D MNIST input images. The first argument passed to the Conv2D() layer function is the number of output channels – in this case we have 32 output channels.
+The next input is the kernel_size, which in this case is a 3×3 moving window.  Next, the activation function is a rectified linear unit and finally we have to supply the model with the size of the input to the layer (which is declared in another part of the code).
+Declaring the input shape is only required for the first layer.
 Keras is good enough to work out the size of the tensors flowing through the model from there.
 
-**MaxPool2D** (Reduction matrix)
+>**MaxPool2D** (Reduction matrix)
 
-**Flatten** (Transform an input shape n*c*h*w into a n*(c*h*w) vector)
+>**Flatten** (Transform an input shape n*c*h*w into a n*(c*h*w) vector)
 
-**Dense** (each neuron is linked to the ones of the n+1 layer)
+>**Dense** (each neuron is linked to the ones of the n+1 layer)
 
-**DropOut** (freeze some neurons to avoid overfitting)
+>**DropOut** (freeze some neurons to avoid overfitting)
 
-**SoftMax** (Transform a scoring distribution in a Probability distribution)
+>**SoftMax** (Transform a scoring distribution in a Probability distribution)
 
-**lr** (Learning rate, interval used for the gradient descent algorithm)
+>**lr** (Learning rate, interval used for the gradient descent algorithm)
 
-**loss** (Cost/loss function used for this neural network, e.g. linear regression)
+>**loss** (Cost/loss function used for this neural network, e.g. linear regression)
 
-**Activation** (function used to ponderate the output of the neurone)
+>**Activation** (function used to ponderate the output of the neurone)
 
-
-then insert the following line of code and you will see one sample of an image from MNIST
-increase the second parmaeter to see more digit images and run the cell.
+2. **Insert** the following line of code (which uses the image manipulation functions defined on previous steps) and you will see one sample of an image from MNIST.
+3. Change the second parameter to see more digit images and **run the cell**.
 
 ```
 Show_Images(x_train,2)
 ```
 
-You shoud see the following model summary :
+You should see an output similar to the one below:
 
 
 ![alt text](images/Digits.png "IBM digits")
 
 
-##  Step 3 Build,test & run the CNN model
+##  Step 3 - Build,test & run the CNN model
 
 
 Now we are ready to train our defined model against the MNIST training data.
-copy/paste & excute the code below :
+1. **Copy/paste** & **execute** the code below :
 
 ```
 # Train the Classifier wrapper
@@ -213,12 +197,10 @@ print("Baseline Error: %.2f%%" % (100-scores[1]*100))
 
 You should see the various iterations, epochs with an accuracy & loss values associated to the model :
 
-<center>
-**You should see different numbers on your notebook for the success ratio....
-Fully explainable as the training & test dataset are selected randomly from MNIST
-So nobody should have exaclty the same dataset from a statistical point of view but
-differences must be very minor.**
-</center>
+>You should see different numbers on your notebook for the success ratio....
+Fully explainable as the training & test dataset are selected randomly from MNIST.
+So nobody should have exaclty the same dataset from a statistical point of view but differences must be very minor.**
+
 
 ![alt text](images/Model2.png "IBM model")
 
@@ -233,18 +215,18 @@ predictions = Original_Classifier.predict(x_test[:len(x_test)])
 
 NbErrors = CheckImagesAcc(x_test, y_test, predictions, 5)
 OriginalAccOnTest = (100-(NbErrors/len(x_test))*100)
-print("Original Classifier Succcess ratio on Test Images : %.2f%%" % OriginalAccOnTest)
+print("Original Classifier Success ratio on Test Images : %.2f%%" % OriginalAccOnTest)
 ```
 
 
-You should see depending on the implemented model :
+You should see something similar as below depending on the implemented model :
 ![alt text](images/Results.png "IBM WS")
 
-Now let's start challenging our Hand Digit recognition model.
-Thanks to the ART toolbox we have a full set of attacks & defense available to assess our classifier.
+Now let's start challenging our HandWritten Digit Recognition model.
+Thanks to the **ART toolbox** we have a full set of attacks & defenses available to assess our classifier.
 
 
-##  Step 5 Assess the quality of our Classifier
+##  Step 5 - Assess the quality of our Classifier
 
 The ART library contains implementations of the following evasion attacks:
 
@@ -258,10 +240,10 @@ The ART library contains implementations of the following evasion attacks:
 	C&W Attack (Carlini and Wagner, 2016)
 	NewtonFool (Jang et al., 2017)
 
-Let use one of them for this tutorial the Fast Gradient Method and assess our model against it.
-MNIST training dataset is made of 60000 samples so to save some time let's create only 10% of modified data from it.
+Let's use one of them for this tutorial, the **Fast Gradient Method** and assess our model against it.
+MNIST training dataset is made of 60000 samples so to save some time we'll create a sample of only 10% of modified data.
 
-Copy/paste the following code :
+1. **Copy/paste** the following code :
 
 ```
 # Create modified train sub dataset (100 first images) with noise on it.
@@ -272,14 +254,14 @@ x_test_adv_FGM = adv_crafter_FGM.generate(x_test[:len(x_test)])
 Show_Images(x_train_adv_FGM,3)
 ```
 
-you should see what are the modified images using this method (introdfucing some noise on it)
+2. **Run** the cell, you should see what are the modified images using this method (introducing some noise on it)
 
 
 ![alt text](images/FGM.png "IBM FGM")
 
 
-Now assess our classifier against this new training dataset :
-Copy /paste the following code and run it :
+Now assess our classifier against this new training dataset:
+3. **Copy /paste** the following code and **run** it:
 
 ```
 # Challenge the Classifier with FastGradient modified dataset
@@ -289,20 +271,19 @@ NbErrors = CheckImagesAcc(x_test_adv_FGM, y_test, predictions, 10)
 print("Original Classifier Succcess ratio on Adversarial FastGradient Images: %.2f%%" % (100 - (NbErrors/len(x_test_adv_FGM))*100))
 ```
 
-![alt text](images/FGM-result.png "IBM FGM")
+![alt text](images/FGM-result.png "IBM_FGM")
 
-the quality of our model goes down from 98,31% accuracy to 7.51% !!!!
-and this is just a simple example so you cannot think about deplyoing this classifier in a real world production system with so much hole in term of accuracy !!
+The quality of our model goes down from 98,31% accuracy to 7.51% !! and this is just a simple example. You cannot think about deploying this classifier in a real world production system with such a poor accuracy score!!
 
-Again thanks to our ART toolbox to provide a set of librairies to increase during the training the accuracy and various known attacks.
+Again thanks to the ART toolbox and its provided set of libraries we can try to increase the training and the accuracy based on various known attacks.
 
 Please refer to the gitHub article from ART to get a full sample on how to train more efficiently your classifier.
 
-In this tutorila let's explore some interesting we can observe rapidly that proof the ART's added value.
+In this tutorial we'll explore some interesting approaches and rapidly observe the proof of the ART's added value.
 
-To do so let's enrich our intiial training data with the one we just created for the Fast Method Gradient Attack.
+To do this let's enrich our initial training data with the one we just created for the Fast Method Gradient Attack.
 
-Copy/paste the code below :
+4. **Copy/paste** the code below :
 
 ```
 # Data augmentation: expand the training set with the adversarial samples
@@ -323,7 +304,8 @@ Again we now have a robust trained classifier as shown below :
 
 ![alt text](images/Robust_Model.png "IBM Robust model")
 
-Let's make sure we've made some significant improvement with our Fast Gradient attack method ....copy/paste the code below :
+Let's make sure we've made some significant improvements with our Fast Gradient attack method ....
+5. **Copy/paste** the code below :
 
 ```
 # Challenge the Robust Classifier with FastGradient modified dataset
@@ -336,7 +318,7 @@ and obviously we've made significant progress from 7.51% accuracy to 96.19% ....
 
 ![alt text](images/Robust_Result.png "IBM Robust model")
 
-And Finally what about the original test images without attack artificats on its, did we also improved our model regarding "regular" test images ??????
+And Finally what about the original test images without the attack artifacts on it, did we also improved our model regarding "regular" test images?
 
 ```
 predictions = Robust_Classifier.predict(x_test[:len(x_test)])
@@ -346,31 +328,31 @@ print("Robust Classifier : %.2f%% vs Original Classifier : %.2f%%" % (RobustAccO
 ```
 
 
-<center><p>
-![alt text](images/End_Result.png "IBM Robust model")
-</p></center>
+![alt text](images/End_Result.png "IBM_Robust_model")
 
 
-As dreamt ... YES we did some increment in our tutorial but imagine mixing all these attacks together and the gain you can make on your model robustness & accuracy.
-Definitively ART must be part of your Deep Learning journey to make your DL model business ready !
 
-##  Step 5 : Conclusion
+As expected, we **indeed did some increment** in our tutorial but imagine mixing all these attacks together and the gain you can make on your model robustness & accuracy.
+Definitively ART must be part of your Deep Learning journey to make your DL models business-ready !
 
-Last percent is the real challenge in Deep Learning and can make the difference between a good model and a deployed model.
-Remember 100% accuracy is a myth, you will never reach it but make sure to be the nearest.
+##  Step 5 - Conclusion
+
+Improving the last percents is the real challenge in Deep Learning and can make significant difference between a good model and a deployed model.
+>Remember 100% accuracy is a myth, you'll never reach it despite all the hard work but make sure to be as nearest as possible.
 
 
-By looking at the overall digits for which our model was not working it appears clearly that our model is missing some handwritten common sense.
-Because as human we've learned to draw digit with a pen on a paper we have on top of what we see the knwoledge of the digit drawing pattern that allows us to be 50% better than the generated model.
-That's true for all deep learning technics to be accurate enough there is a need for more than just perception capabilities.
+By looking at the overall digits for which our model was not working it appears clearly that our model is missing some HandWritten common sense.
+Because as human we've learned to draw digit with a pen on a paper we have on top of what we see the knowledge of the digit drawing patterns that allow us to be 50% better than the generated model.
+That's true for all deep learning technics, to be accurate enough there is a need for more than just perception capabilities.
 In a nutshell reasoning and more importantly common sense are required to be called **Artificial Intelligence**
 
 Think of Autonomous Cars, Surgery robotics !!!
 
 ![alt text](images/AI.png "IBM WS")
 
-How to build that, DL gurus are working on that, with technics similar to what we saw here called adversarial network where One ANN is in charge to challenge another reponsible for the modeling (in our case one ANN using autoencoder neurons willgenerate 1000 times more training data for each digit taking into account how to draw a digit and therefore the 2nd ANN will learn that from the training dataset.
-Such technics are prooven step forwards in DL for business.
+**How to build such systems?**
+**Deep Learning** gurus are working on it, with technics similar to what we saw here called adversarial network where One ANN is in charge to challenge another responsible for the modeling (in our case one ANN using autoencoder neurons will generate 1000 times more training data for each digit taking into account how to draw a digit and therefore the 2nd ANN will learn that from the training dataset.
+Such technics are proven steps forward in Deep Learning applied for business.
 
 Please feel free to share this tutorial and provide me with your remarks, questions, I would appreciate
 
