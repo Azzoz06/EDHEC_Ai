@@ -76,11 +76,11 @@ More information about the expected work: [here](GroupWork.md)
 ### Day Two
 
 + Deep Learning fundamentals
-+ **Hands on Labs** - Deep Learning for image recognition. This lab is going to walk you through the process of building Neural Networks to recognize hand written digits in different ways:
-  1. Using Visual Recognition Service [here](Labs/Lab6-DL_VisualReco/Lab6-DL-Custom_VR/Lab6-Custom_Visual_Reco.md)
-  2. Using a CNN [here](Labs/DayTwoLabs/Lab6-DL_VisualReco/Lab6-DL-HandWritten_CNN_ART/README.md)
-  3. Building a NN in a Jupyter Notebook [here](Labs/DayTwoLabs/Lab6-DL_VisualReco/Lab6-DL-NN_Notebook/Lab6-DeepLearning_Keras_Notebook.md)
-  4. Using the NN Builder from Watson Studio [here](Labs/DayTwoLabs/Lab6-DL_VisualReco/Lab6-DL-NNBuilder/README.md)
++ **Hands on Labs** - Deep Learning for image recognition. This lab is going to walk you through the process of building Neural Networks to recognize hand written digits in different ways (a recap of Day Three Labs is available [here](Labs/DayThreeLabs/README.md)):
+  1. Using Visual Recognition Service [here](Labs/DayThreeLabs/Lab6-DL_VisualReco/Lab6-DL-Custom_VR/Lab6-Custom_Visual_Reco.md)
+  2. Using a CNN [here](Labs/DayThreeLabs/Lab6-DL_VisualReco/Lab6-DL-HandWritten_CNN_ART/README.md)
+  3. Building a NN in a Jupyter Notebook [here](Labs/DayThreeLabs/Lab6-DL_VisualReco/Lab6-DL-NN_Notebook/Lab6-DeepLearning_Keras_Notebook.md)
+  4. Using the NN Builder from Watson Studio [here](Labs/DayThreeLabs/Lab6-DL_VisualReco/Lab6-DL-NNBuilder/README.md)
 
 
 ### Day Three

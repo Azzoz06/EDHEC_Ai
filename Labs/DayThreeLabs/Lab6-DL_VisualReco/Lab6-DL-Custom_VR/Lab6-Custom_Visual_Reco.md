@@ -5,7 +5,7 @@
 
 
 This tutorial shows IBM Watson Studio framework capabilities to create your own image classification service leveraging Watson Visual Recogniton Service.
- 
+
 Watson Visual Recogniton Service is a pre-trained neurla network exposed as a service that you can enrich & customize with your own classifiers.
 
 ## Introduction
@@ -75,7 +75,7 @@ and add using "drag and drop", drop the second file called to the newly created 
 Guess what you're ready to train you classifier !
 Click on the upper right corner "Train" button
 
-Take a break the cloud Visual Recognition service is working for you to train your classifier 
+Take a break the cloud Visual Recognition service is working for you to train your classifier
 Depending on your subscription fee this can take seconds or minutes.
 
 
